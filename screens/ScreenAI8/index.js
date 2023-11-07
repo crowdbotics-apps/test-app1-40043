@@ -7,8 +7,11 @@ const LoginScreen = () => {
 
   const handleLogin = () => {
     const passwordValidation = /^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])/;
-
-    if (!passwordValidation.test(password)) {
+    if(!username)
+    {
+      Alert.alert("Error", "Username can't be empty");
+    }
+    else if (!passwordValidation.test(password)) {
       Alert.alert("Error", "Password must contain at least 1 number, 1 capital letter, and 1 special character");
     } else {
       Alert.alert("Success", "Logged in successfully");
