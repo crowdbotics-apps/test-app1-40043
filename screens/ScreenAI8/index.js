@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { SafeAreaView, StyleSheet, TextInput, Button, Alert, Image } from "react-native";
+import { SafeAreaView, StyleSheet, TextInput, Button, Alert } from "react-native";
 
 const LoginScreen = () => {
   const [username, setUsername] = useState("");
@@ -15,18 +15,10 @@ const LoginScreen = () => {
     }
   };
 
-  const handleGoogleLogin = () => {
-    Alert.alert("Google Login", "Google login functionality is not implemented yet.");
-  };
-
   return <SafeAreaView style={styles.container}>
       <TextInput style={styles.input} onChangeText={setUsername} value={username} placeholder="Username" />
       <TextInput style={styles.input} onChangeText={setPassword} value={password} placeholder="Password" secureTextEntry />
       <Button title="Login" onPress={handleLogin} color="orange" />
-      <Image style={styles.image} source={{
-      uri: 'https://tinyurl.com/42evm3m3'
-    }} />
-      <Button title="Login with Google" onPress={handleGoogleLogin} color="red" />
     </SafeAreaView>;
 };
 
